@@ -15,7 +15,7 @@ public class FirstScript {
         // Paso 3
         driver.getTitle();
         // Paso 4
-        driver.manage().timeouts().implicitlyWait(Duration.ofMillis(1000));
+        driver.manage().timeouts().implicitlyWait(Duration.ofMillis(5000));
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         // Paso 5
         WebElement textBox = driver.findElement(By.name("my-text"));
@@ -28,6 +28,16 @@ public class FirstScript {
         message.getText();
         // Paso 8
         //driver.quit();
+        driver.get("http://localhost:8088/");
+        WebElement buttonGithub = driver.findElement(By.xpath("//*[@id=\"button_github\"]"));
+        buttonGithub.click();
+        driver.manage().timeouts().implicitlyWait(Duration.ofMillis(5000));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+        driver.get("http://localhost:8088/");
+        WebElement buttonLinkedin = driver.findElement(By.id("button_linkedin"));
+        buttonLinkedin.click();
+        driver.manage().timeouts().implicitlyWait(Duration.ofMillis(5000));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
     }
 
 }
